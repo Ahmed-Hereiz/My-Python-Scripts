@@ -137,6 +137,7 @@ class DataVisualizer:
         - figsize (tuple): size of plot.
         - cbar(bool): adding cbar, default is False
         - fmt(str): format string for the annotations, default is '.2g'.
+        - ascending : to sort corr matrix only of target is not None, defult is False
         
         
         
@@ -303,20 +304,23 @@ class DataVisualizer:
             plt.xlabel(feature)
 
 
-    def plot_correlation(self, cols=None, target=None, palette='Blues', figsize=(16, 16), cbar=False, fmt='.2g'):
+    def plot_correlation(self, cols=None, target=None, palette='Blues', figsize=(16, 16), cbar=False, fmt='.2g', ascending=False):
         if cols is None:
             cols = self.data.columns
+            cols = self.data[cols].select_dtypes(include=np.number).columns
         elif isinstance(cols, str):
             cols = [cols]
         elif not isinstance(cols, list):
             raise ValueError("Invalid value for 'cols'. Allowed values are None, str, and list.")
-        cols = self.data[cols].select_dtypes(include=np.number).columns
+        
         if target == None:
             cols_corr = self.data[cols].corr()
         else:
             if isinstance(target, str):
                 target = [target]
-            cols_corr = pd.DataFrame(self.data.corr()[target])
+            cols_corr = pd.DataFrame(self.data.corr()[target].loc[cols])
+        if target is not None:
+            cols_corr = cols_corr.sort_values(by=target[0], ascending=ascending)
         if type(palette) == str:
             cp = palette
         else:
