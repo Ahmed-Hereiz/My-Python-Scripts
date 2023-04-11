@@ -59,20 +59,19 @@ class ColorPalette:
 
         return sns.color_palette(colors)
 
-    def get_color(self):
+    def get_color(self, palette, color_index=-2):
         """
         Given a list of colors, returns the last color in the list.
         """
-        palette = self.create_sequential_palette(num_colors=5)
-        return palette[-2]
+        return palette[color_index]
         
 
 class DataVisualizer:
     """
     The DataVisualizer class is designed to help visualize and explore data.
-    It contains seven methods : 
+    It contains Eight methods : 
     plot_distribution, plot_feature_by_target, plot_bar, plot_correlation,
-    plot_missing, plot_skewness, plot_pie
+    plot_missing, plot_skewness, plot_pie, plot_time_series
     that can be used to generate various types of plots to understand the data better.
     
     Attributes:
@@ -176,6 +175,20 @@ class DataVisualizer:
         - cols (list, str, or None): columns to be plotted. Default is None, which plots all columns.
         - fig_size (tuple of float): size of the figure. Default is (15, None).
     
+    
+    
+       plot_time_series(self, time_col, target_cols, format="%Y-%m-%d %H:%M", color="b", height=5, width=5)
+        
+           Generates time series plot for selected columns of a data frame.
+        
+       Parameters:
+       - data (pandas DataFrame): Input data frame containing the data to be plotted.
+       - time_col (str): Name of the column containing the time stamps.
+       - target_cols (list or str): Columns to be plotted.
+       - format (str): Format of the time stamps in the data, default is '%Y-%m-%d %H:%M'.
+       - color (str): Color of the plotted line, default is 'b'.
+       - height (float): Height of the plot in inches, default is 5.
+       - width (float): Width of the plot in inches, default is 5. 
     """
     
     def __init__(self, data):
@@ -379,6 +392,21 @@ class DataVisualizer:
                 fig.delaxes(ax[i])
 
         plt.show()
+        
+
+    def plot_time_series(self, time_col, target_cols, format="%Y-%m-%d %H:%M", color="b", height=5, width=5):        
+        if not isinstance(self.data[time_col], pd.core.series.Series):
+            self.data[time_col] = pd.to_datetime(self.data[time_col], format=format)
+        self.data.set_index(time_col)
+        for col in target_cols:
+            if col == time_col:
+                continue
+            plt.figure(figsize=(width, height))
+            plt.plot(self.data[col], color=color)
+            plt.xlabel(time_col)
+            plt.ylabel(col)
+            plt.title("Time series plot of {}".format(col))
+            plt.show()
         
         
         
