@@ -1,6 +1,6 @@
 # My-Python-Scripts
 
-## In this repo Iam making many python scripts which helps me while making any Machine Learning project
+## In this repository Iam making many python scripts which helps me while making any Machine Learning project
 
 ## Requirements :
 > - Python 3.6 or later
@@ -8,6 +8,8 @@
 > - `numpy`
 > - `pandas`
 > - `SciPy`
+> - `matplotlib`
+> - `seaborn`
 
 ## Scripts:
 > - EDA
