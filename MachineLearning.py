@@ -6,7 +6,7 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 import matplotlib.pyplot as plt
 
 
-class ModelEvaluate:
+class ModelRegressionEvaluate:
     """
     A class that takes a list of regression models and evaluates their performance
     using cross-validation.
