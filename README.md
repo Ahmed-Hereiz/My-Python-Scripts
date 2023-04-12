@@ -13,6 +13,7 @@
 > - EDA
 > - Test
 > - Preprocessing
+> - MachineLearning
 
 
 <br><br>
