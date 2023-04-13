@@ -148,4 +148,6 @@ A transformer class to standardize numeric features in a Pandas DataFrame.
 
 A transformer class to scale numeric features to a specified range in a Pandas DataFrame.
 
+### DateTimeTranformer
 
+A transformer class for extracting days, months, years from a time serires
