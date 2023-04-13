@@ -555,3 +555,34 @@ class MinMaxScaleTransform(BaseEstimator, TransformerMixin):
     def fit_transform(self, X, y=None):
         self.scaler_ = MinMaxScaler().fit(X.loc[:, self.columns])
         return self.transform(X)
+    
+
+class DateTimeTransformer(BaseEstimator, TransformerMixin):
+    """
+    Transformer that extracts years, months, days from specified column.
+
+    Parameters:
+    ----------
+    columns : str
+        column name to select from the input data frame.
+    date_format : str
+        specified date fromat to extract from
+    """
+    def __init__(self, column, date_format, drop_original=False):
+        self.column = column
+        self.date_format = date_format
+        self.drop_original = drop_original
+        
+    def fit(self, X, y=None):
+        return self
+        
+    def transform(self, X):
+        X = X.copy()
+        X[self.column] = pd.to_datetime(X[self.column], format=self.date_format)
+        X['day'] = X[self.column].dt.day
+        X['month'] = X[self.column].dt.month
+        X['year'] = X[self.column].dt.year
+        if self.drop_original == True:
+            return X.drop(self.column,axis=1)
+        else:
+            return X
