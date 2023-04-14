@@ -53,3 +53,11 @@ class DataChecker:
         """
         assert not self.X_train.isnull().values.any(), "NaN values in training data"
         assert not self.X_test.isnull().values.any(), "NaN values in test data"
+        
+    def check_nan_values_y(self):
+        """
+        Checks if there are NaN values in the target variable of the training and test sets.
+        """
+        assert not self.y_train.isnull().values.any(), "NaN values in training data"
+        assert not self.y_test.isnull().values.any(), "NaN values in test data"
+        
