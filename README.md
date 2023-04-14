@@ -82,6 +82,8 @@ A class to check the shapes of the training and test sets, and to check for nega
 
 - check_nan_values_X(): Checks if there are NaN values in the feature variables of the training and test sets.
 
+- check_nan_values_y(): Checks if there are NaN values in the target variable of the training and test sets.
+
 <br><br>
 
 <b><hr style="border-top: 4px solid black;"/></b>
