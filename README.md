@@ -53,6 +53,8 @@ A class for Visualizing data.
 
 - `plot_pie`: Generates pie chart plots for categorical features with up to 6 unique values.
 
+- `plot_time_series` : Generates time series plot of all features.
+
 
 # DataExplorer
 
