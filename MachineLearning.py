@@ -49,7 +49,7 @@ class ModelRegressionEvaluate:
 
 
 
-class RegressionPlot:
+class RegressionModelPlot:
     """A class for creating a set of plots to visualize the performance of a regression model.
 
     Parameters
