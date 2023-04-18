@@ -25,7 +25,7 @@
 
 # EDA :
 
-## Contains three classes for now which are :<br>(ColorPalette, DataVisualizer, DataExplorer)
+##### Contains three classes for now which are :  (ColorPalette, DataVisualizer, DataExplorer)
 
 # ColorPalette Class
 
