@@ -16,6 +16,7 @@
 > - Test
 > - Preprocessing
 > - MachineLearning
+> - ImageDataProcessor
 
 
 <br><br>
@@ -155,3 +156,9 @@ A transformer class to scale numeric features to a specified range in a Pandas D
 ### DateTimeTranformer
 
 A transformer class for extracting days, months, years from a time serires
+
+
+<b><hr style="border-top: 4px solid black;"/></b>
+
+
+# ImageDataProcessor :
