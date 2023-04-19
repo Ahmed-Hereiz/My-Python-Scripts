@@ -10,6 +10,7 @@
 > - `SciPy`
 > - `matplotlib`
 > - `seaborn`
+> - `Tensorflow`
 
 ## Scripts:
 > - EDA
