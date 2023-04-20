@@ -163,3 +163,5 @@ A transformer class for extracting days, months, years from a time serires
 
 
 # ImageDataProcessor :
+
+### I made this class for my computer vision tasks where it helps me to do image processing and generating data that I need
