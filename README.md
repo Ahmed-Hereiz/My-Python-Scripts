@@ -164,4 +164,16 @@ A transformer class for extracting days, months, years from a time serires
 
 # ImageDataProcessor :
 
-### I made this class for my computer vision tasks where it helps me to do image processing and generating data that I need
+### I made this script for my computer vision tasks where it helps me to do image processing and generating data that I need and it conatains :
+
+
+### ImageDataHandler :
+
+this class helps me to handle images and it has many methods...
+
+> - `download_data` : helps to download images using url
+> - `split_data` : split images folders and make new copy for training and testing
+> - `delete_folder` : to avoid having large space, used after making new folders for traning and testing to remove the old folders
+
+### ImageDataGenerator :
+
