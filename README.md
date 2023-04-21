@@ -18,7 +18,7 @@
 > - Preprocessing
 > - MachineLearning
 > - ImageDataProcessor
-> - NeuralNet
+> - NeuralNet  (This file is not complete yet)
 
 
 <br><br>
