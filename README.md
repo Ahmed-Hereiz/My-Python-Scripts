@@ -178,3 +178,7 @@ this class helps me to handle images and it has many methods...
 
 ### ImageDataGenerator :
 
+this class generates images for training the model
+
+
+
