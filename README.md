@@ -180,5 +180,7 @@ this class helps me to handle images and it has many methods...
 
 this class generates images for training the model
 
+### ImagePlotter :
 
+this class plots some of the generated images 
 
