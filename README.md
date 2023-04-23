@@ -184,3 +184,8 @@ this class generates images for training the model
 
 this class plots some of the generated images 
 
+<b><hr style="border-top: 4px solid black;"/></b>
+
+# NeuralNet
+
+(this script is not ready yet)
