@@ -1,10 +1,8 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
-from sklearn.metrics import confusion_matrix
-
         
-
+        
 class TrainingHistoryPlotter:
     """
     A class to plot the accuracy and loss of a Keras model training history.
