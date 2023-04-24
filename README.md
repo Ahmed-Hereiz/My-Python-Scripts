@@ -21,8 +21,6 @@
 > - NeuralNet  (This file is not complete yet)
 
 
-<br><br>
-
 <b><hr style="border-top: 4px solid black;"/></b>
 
 # EDA :
