@@ -196,6 +196,12 @@ class DataVisualizer:
         self.data = data
     
     def plot_distribution(self, cols=None, palette='Blues', color='b', hue=None, feature_type='both'):
+        """
+        How to use : 
+        ------------
+        > dv = DataVisualizer(data=df)
+        > dv.plot_distribution()
+        """
         if cols is None:
             cols = self.data.columns
         elif isinstance(cols, str):
@@ -232,6 +238,12 @@ class DataVisualizer:
 
 
     def plot_feature_by_target(self, target, feature_type='both', color='b', height=5, width=5, cols=None, plotdim=None):
+        """
+        How to use : 
+        ------------
+        > dv = DataVisualizer(data=df)
+        > dv.plot_feature_by_target(target=target_col)
+        """
         if cols is None:
             cols = self.data.columns
         elif isinstance(cols, str):
