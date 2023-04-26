@@ -317,6 +317,12 @@ class DataVisualizer:
 
 
     def plot_correlation(self, cols=None, target=None, palette='Blues', figsize=(16, 16), cbar=False, fmt='.2g', ascending=False):
+        """
+        How to use : 
+        ------------
+        > dv = DataVisualizer(data=df)
+        > dv.plot_correlation()
+        """
         if cols is None:
             cols = self.data.columns
             cols = self.data[cols].select_dtypes(include=np.number).columns
@@ -343,6 +349,12 @@ class DataVisualizer:
     
 
     def plot_missing(self, palette='Blues', figsize=(16, 16), cbar=False, fmt='.5g'):
+        """
+        How to use : 
+        ------------
+        > dv = DataVisualizer(data=df)
+        > dv.plot_missing()
+        """
         if type(palette) == str:
             cp = palette
         else:
