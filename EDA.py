@@ -293,6 +293,12 @@ class DataVisualizer:
         
         
     def plot_bar(self, target, cols=None, palette='Blues', hue=None):
+        """
+        How to use : 
+        ------------
+        > dv = DataVisualizer(data=df)
+        > dv.plot_bar(target=target_col)
+        """
         if cols is None:
             cols = self.data.columns
         elif isinstance(cols, str):
