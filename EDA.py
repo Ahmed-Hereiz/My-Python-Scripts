@@ -371,6 +371,12 @@ class DataVisualizer:
         
         
     def plot_skewness(self, cols, palette='Blues', figsize=(18, 8), cbar=False, fmt='.2g',sort_ascending=True):
+        """
+        How to use : 
+        ------------
+        > dv = DataVisualizer(data=df)
+        > dv.plot_skewness(cols=columns)
+        """
         if isinstance(cols, str):
             cols = [cols]
         plt.figure(figsize=figsize)
