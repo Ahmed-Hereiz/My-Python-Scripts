@@ -38,7 +38,7 @@ A class for creating color palettes.
 
 # DataVisualizer
 
-A class for Visualizing data.
+A class for Visualizing data (there is a how to use docstring for each method in this class).
 
 - `plot_distribution`: Generates distribution plots (boxplot and KDE or countplot) of selected columns of a data frame based on the number of unique values in the selected column.
 
