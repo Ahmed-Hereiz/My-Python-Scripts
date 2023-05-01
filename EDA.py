@@ -392,6 +392,12 @@ class DataVisualizer:
         
         
     def plot_pie(self, palette='Blues', cols=None, fig_size=(15, None)):
+        """
+        How to use : 
+        ------------
+        > dv = DataVisualizer(data=df)
+        > dv.plot_pie()
+        """
         if cols is None:
             cols = self.data.columns
         elif isinstance(cols, str):
