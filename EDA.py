@@ -61,7 +61,7 @@ class ColorPalette:
 
     def get_color(self, palette, color_index=-2):
         """
-        Given a list of colors, returns the last color in the list.
+        Given a list of colors, returns indexed color in the list.
         """
         return palette[color_index]
         
