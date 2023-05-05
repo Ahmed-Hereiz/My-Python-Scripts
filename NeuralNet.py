@@ -15,12 +15,12 @@ class TrainingHistoryPlotter:
         """
         self.history = history
 
-    def plot(self):
+    def plot(self,figsize(12,5)):
         """
         Plots the accuracy and loss of the model training history.
         """
         # Plot accuracy
-        fig, (ax1, ax2, ax3) = plt.subplots(1, 3, figsize=(12, 5))
+        fig, (ax1, ax2, ax3) = plt.subplots(1, 3, figsize=figsize)
 
         ax1.plot(self.history.history['binary_accuracy'],color='#e32b2b')
         ax1.plot(self.history.history['val_binary_accuracy'],color='#ab1313')
