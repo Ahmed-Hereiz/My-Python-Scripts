@@ -474,6 +474,12 @@ class DataExplorer:
         self.data = data
         
     def explore_unique_number(self, cols=None, feature_type='both'):
+        """
+        How to use : 
+        ------------
+        > de = DataExplorer(data=df)
+        > de.explore_unique_number()
+        """
         if cols is None:
             cols = self.data.columns
         elif isinstance(cols, str):
