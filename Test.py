@@ -34,6 +34,11 @@ class DataChecker:
     def check_shapes(self):
         """
         Checks if the shapes of the training and test sets match and if the number of features and targets match.
+        
+        How to use:
+        -----------
+        data_check = DataChecker(X_train, y_train, X_test, y_test)
+        data_check.check_shapes()
         """
         assert self.X_train.shape[0] == self.y_train.shape[0], "Mismatched shapes between X_train and y_train"
         assert self.X_test.shape[0] == self.y_test.shape[0], "Mismatched shapes between X_test and y_test"
