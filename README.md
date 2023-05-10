@@ -183,5 +183,5 @@ this class plots some of the generated images
 # NeuralNet
 
 This script class is for making methods to help while making neural networks 
-(this script is not ready yet)
+(this script is not ready yet!!!)
 
