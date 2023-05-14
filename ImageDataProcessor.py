@@ -170,7 +170,7 @@ class ImageGenerator:
         self.img_width = img_width
         self.batch_size = batch_size
         
-    def create_data_generators(self):
+    def create_data_generators(self, class_mode):
         datagen = ImageDataGenerator(rescale=1./255, validation_split=0.2)
 
         # create train and test data generators
@@ -181,20 +181,20 @@ class ImageGenerator:
                 self.train_dir,
                 target_size=(self.img_height, self.img_width),
                 batch_size=self.batch_size,
-                class_mode='binary')
+                class_mode=class_mode)
 
         val_generator = datagen.flow_from_directory(
                 self.train_dir,
                 target_size=(self.img_height, self.img_width),
                 batch_size=self.batch_size,
-                class_mode='binary',
+                class_mode=class_mode,
                 subset='validation')
 
         test_generator = test_datagen.flow_from_directory(
                 self.test_dir,
                 target_size=(self.img_height, self.img_width),
                 batch_size=self.batch_size,
-                class_mode='binary')
+                class_mode=class_mode)
         
         return train_generator, val_generator, test_generator
 
