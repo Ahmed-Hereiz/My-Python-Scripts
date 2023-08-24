@@ -596,21 +596,29 @@ class ExtractData(BaseEstimator, TransformerMixin):
     ----------
     column : str
         The column name to extract the version number from.
+    change_col_name : str, optional
+        The new column name to replace the original column name with (default is None).
 
     Returns
     -------
     pandas.Series
         A new Series containing the extracted version numbers.
     """
-    def __init__(self, column):
+    def __init__(self, column, change_col_name=None):
         self.column = column
+        self.change_col_name = change_col_name
 
     def fit(self, X, y=None):
         return self
 
     def transform(self, X):
         X_copy = X.copy()
-        X_copy[self.column] = X_copy[self.column].str.extract(r'(\d+\.\d+|\d+)')  # Updated regex pattern
+        extracted_column = X_copy[self.column].str.extract(r'(\d+\.\d+|\d+)')  # Updated regex pattern
+        if self.change_col_name is not None:
+            X_copy[self.change_col_name] = extracted_column
+            X_copy.drop(columns=[self.column], inplace=True)
+        else:
+            X_copy[self.column] = extracted_column
         return X_copy
 
     def fit_transform(self, X, y=None):
