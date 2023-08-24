@@ -586,3 +586,33 @@ class DateTimeTransformer(BaseEstimator, TransformerMixin):
             return X.drop(self.column,axis=1)
         else:
             return X
+
+
+class ExtractData(BaseEstimator, TransformerMixin):
+    """
+    A transformer class to extract the version number from data in the format "X.X and up".
+
+    Parameters
+    ----------
+    column : str
+        The column name to extract the version number from.
+
+    Returns
+    -------
+    pandas.Series
+        A new Series containing the extracted version numbers.
+    """
+    def __init__(self, column):
+        self.column = column
+
+    def fit(self, X, y=None):
+        return self
+
+    def transform(self, X):
+        X_copy = X.copy()
+        X_copy[self.column] = X_copy[self.column].str.extract(r'(\d+\.\d+|\d+)')  # Updated regex pattern
+        return X_copy
+
+    def fit_transform(self, X, y=None):
+        self.fit(X)
+        return self.transform(X)
